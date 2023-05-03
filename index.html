@@ -23,12 +23,23 @@
       box-sizing: border-box;
       min-height: 100vh;
       font-family: 'Hanken Grotesk', sans-serif;
+      background-color: #e9e0e0;
     }
    .conteiner{
-    display: flex;
-    justify-content: center;
+    
     margin-top: 120px;
     height: 100vh;
+    
+   }
+   .conteiner-small{
+    width: 600px;
+    margin-left: 28%;
+    border-radius: 15px;
+    border: 0px ;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    
    }
     .blue-box{
       width: 300px;
@@ -229,6 +240,7 @@
 </head>
 <body>
     <header class="conteiner">
+      <div class="conteiner-small">
       <section class="blue-box">
         <h4 class="result">Your Result</h4>
         <article class="circle">
@@ -264,6 +276,7 @@
           </article>
         <button>Continue</button>
       </section>
+      </div>
     </header>
   
   <div class="attribution">
