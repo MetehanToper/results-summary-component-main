@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet"> -->
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @font-face {
+      font-family:'Hanken Grotesk', sans-serif;
+      src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+    }
+    body{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      min-height: 100vh;
+      font-family: 'Hanken Grotesk', sans-serif;
+    }
+   .conteiner{
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+    height: 100vh;
+   }
+    .blue-box{
+      width: 300px;
+      height: 400px;
+      background: linear-gradient( hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+      border-radius: 15px;
+      position: relative;
+      color:hsl(0, 0%, 100%);
+      text-align: center;
+      
+    }
+    .result{
+      font-size: 20px;
+      color: hsl(221, 100%, 96%);
+      margin-top: 30px;
+      font-weight: 700;
+  
+     
+    }
+    .circle{
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient( hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
+      margin: 0 auto;
+      position: relative;
+      top: -20px;
+    
+    }
+    .circle h1{
+      font-size: 50px;
+      padding-top: 20px; 
+    
+    }
+    .circle h4{
+      font-size: 12px;
+      font-weight: 400;
+      opacity: .5;
+      position: absolute;
+      top:65px;
+      left: 45px;
+    }
+    .great{
+      font-size: 24px;
+      font-weight: 400;
+      position: absolute;
+      left: 120px;
+      top: 200px;
+    }
+    p{
+      font-size: 16px;
+      font-weight: 400;
+      color: hsl(241, 100%, 89%);
+      margin: 5px 30px;
+      opacity: .6;
+      position: absolute;
+      top: 270px;
+
+    }
+    .white-box{
+      border: 1px solid white;
+      width: 300px;
+      height: 400px;
+      position: relative;
+      border-radius:0 10px 10px 0;
+    }
+    .white-box h1{
+      font-size: 20px;
+      font-weight: 800;
+      margin-left: 30px;
+      color: hsl(224, 30%, 27%);
+
+    }
+    .total{
+      
+      width: 220px;
+      height: 30px;
+      border-radius: 10px;
+      position: relative;
+      left: 45px;
+      top:10px;
+    }
+    .react{
+      background-color: hsla(0, 100%, 67%, .1);
+  
+    }
+    
+    .react img{
+      position: absolute;
+      left: 5px;
+      top: 5px;
+     
+    }
+    .react h3{
+      color: hsl(0, 100%, 67%);
+      font-size: 16px;
+      font-weight: 400;
+      position: absolute;
+      left: 30px;
+      top:-12px;
+    }
+    .react span {
+      font-size: 16px;
+      font-weight: 400;
+      position: absolute;
+      left: 150px;
+      top:5px;
+    }
+  .memory{
+      top: 40px;
+      background-color: hsla(39, 100%, 56%,.1);
+  }
+  .memory img{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+  }
+  .memory h3{
+    color: hsl(39, 100%, 56%);
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 30px;
+    top:-12px;
+  }
+  .memory span {
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 150px;
+    top:5px;
+    }
+
+  .verbal{
+    top:70px;
+    background-color: hsla(166, 100%, 37%, .1);
+  }
+  .verbal img{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+  }
+  .verbal h3{
+    color: hsl(166, 100%, 37%);
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 30px;
+    top:-12px;
+  }
+  .verbal span {
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 150px;
+    top:5px;
+    }
+  .visual{
+    top:100px;
+    background-color: hsla(234, 85%, 45%, .1);
+  }
+  .visual img{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+  }
+  .visual h3{
+    color: hsl(234, 85%, 45%);
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 30px;
+    top:-12px;
+  }
+  .visual span{
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 150px;
+    top:5px;
+  }
+  button{
+    width: 220px;
+    height: 40px;
+    border: 0px solid black;
+    border-radius: 20px;
+    position: absolute;
+    right: 30px;
+    bottom: 40px;
+    color: white;
+    background-color: hsl(224, 30%, 27%);
+
+  }
+
+    .attribution { font-size: 11px; text-align: center; position: absolute; bottom: 0; left: 500px;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+    <header class="conteiner">
+      <section class="blue-box">
+        <h4 class="result">Your Result</h4>
+        <article class="circle">
+          <h1 >76</h1>
+          <h4>of 100</h4>
+        </article>
+        <h1 class="great">Great</h1>
+        <p> You scored higher than 65% of the people who have taken these tests.</p>
+      </section>
+
+
+      <section class="white-box">
+        <h1> Summary</h1>
+          <article class="react total">
+            <img src="./assets/images/icon-reaction.svg" alt="">
+            <h3>Reaction</h3>
+            <span> 80 / 100</span>
+          </article>
+          <article class="memory total">
+            <img src="./assets/images/icon-memory.svg" alt="">
+            <h3>Memory</h3>
+            <span>92 / 100</span>
+          </article>
+          <article class="verbal total">
+            <img src="./assets/images/icon-verbal.svg" alt="">
+            <h3>Verbal</h3>
+            <span>61 / 100</span>
+          </article>
+          <article class="visual total">
+            <img src="./assets/images/icon-visual.svg" alt="">
+            <h3>Visual</h3>
+            <span>72 / 100</span>
+          </article>
+        <button>Continue</button>
+      </section>
+    </header>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Mete Han TOPER</a>.
+  </div>
+</body>
+</html>
